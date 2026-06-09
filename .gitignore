@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.pcap
+*.pcapng
+dist/
+build/
+*.egg-info/
+.vscode/
+.idea/
