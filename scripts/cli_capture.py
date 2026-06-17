@@ -12,7 +12,7 @@ def main(argv: list[str]) -> int:
 
     engine = CaptureEngine(iface=iface, bpf_filter=bpf)
     engine.set_packet_callback(lambda p: print(p.summary()))
-    engine.set_packet_callback(lambda p: print(f"Captured: {p.summary()}")) #debugging
+    engine.set_packet_callback(lambda p: print(f"Captured: {p.summary()}")) #debugging  
     engine.start()
     try:
         time.sleep(duration)
