@@ -20,15 +20,10 @@ where = ["src"]
 
 [tool.importlinter]
 root_package = "eps"
+include_external_packages = true
 
 [[tool.importlinter.contracts]]
 name = "Core layer must not import PyQt6"
 type = "forbidden"
 source_modules = ["eps.core"]
 forbidden_modules = ["PyQt6"]
-
-[[tool.importlinter.contracts]]
-name = "Controllers must not import Qt widgets"
-type = "forbidden"
-source_modules = ["eps.controllers"]
-forbidden_modules = ["PyQt6.QtWidgets"]

@@ -658,25 +658,20 @@ Mandatory before writing Phase 1 code:
 
 ## 10. Current Project Status
 
-**As of 2026-06-08:** Pre-Phase-0.
+**As of 2026-06-17:** Phase 2 Completed.
 
-- The developer has accepted the stack (Python + Scapy + PyQt6).
-- The developer has committed to the reading list.
-- The developer has confirmed Python 3.14.2 is installed and Npcap is in WinPcap API-compatible Mode.
-- The four foundational misconceptions have been identified and corrected.
-- Repository scaffold has **not yet** been created.
-- No code has been written.
+- Environment and repository scaffold setup completed (Phase 0).
+- Asynchronous `CaptureEngine` implemented with callback support, tested via throwaway CLI capture utility (Phase 1).
+- Immutable `Packet` domain object defined (`frozen=True`) and parser implementation complete, handling Ethernet, VLAN, ARP, IPv4, IPv6, TCP, UDP, ICMP, and LLDP (Phase 2).
+- Unit tests written in `tests/test_parser.py` (9 tests passing).
 
 **Immediate next actions for the developer:**
-1. Create the directory tree from Section 5.
-2. Set up `.venv` and `pyproject.toml` from Section 7.
-3. Run the Scapy one-liner from Section 6, Phase 0 step 5, to verify Npcap works.
-4. Begin reading list.
+1. Proceed to Phase 3: Persistence (`.pcap` Read/Write). Implement `pcap_io.py` and write round-trip tests.
+2. Advance to Phase 4: Threading and Controller. Establish `capture_controller.py` with PyQt6 signals.
 
 **Immediate next actions for any AI assistant resuming this project:**
-1. Confirm the developer has completed Phase 0 scaffolding (ask them to paste the output of the Scapy one-liner and the contents of their `pyproject.toml`).
-2. If yes, deliver Phase 1 in a single dense response: `CaptureEngine` implementation, CLI driver, and self-check list.
-3. Do not advance to Phase 2 until the developer reports a working CLI driver.
+1. Initiate Phase 3: provide specifications for `pcap_io.py` and explain Wireshark-compatible PCAP parsing/writing.
+2. Provide verification steps for Phase 3 before proceeding to Phase 4.
 
 ---
 
